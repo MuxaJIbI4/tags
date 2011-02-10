@@ -1,0 +1,8 @@
+#LWP-Cookies-1.0
+Set-Cookie3: cs="5EQ4fhju/+e8jwrOfENZoAbGfbqgkW2NmIHl2qMC/qoj0k45oDJ+mTCRbYoGES2aoJFb/fXy7bqjtyjOd9HNydCRWyxAGW26oKdbraCRbbqgsW26oJFt+uDBHYqg=="; path="/"; domain=.imdb.com; path_spec; expires="2011-01-06 08:00:00Z"; version=0
+Set-Cookie3: session-id=637-3773610-4512040; path="/"; domain=.imdb.com; path_spec; expires="2015-12-29 21:33:30Z"; version=0
+Set-Cookie3: session-id-time=1451453610; path="/"; domain=.imdb.com; path_spec; expires="2015-12-29 21:33:30Z"; version=0
+Set-Cookie3: uu=BCYoK-2krm8hJo6X3Y5ywwEdFoG0rjdO20wf60SGTj9pdR0QcxpAvDOfwNYVzxY7vZmM2S4JXhgZ5dMbjivp_H9umER_l5P7cztzPySwhwQdabUGl8qtHasZwYVo-sw7YNztDadXbhUgVu6YZfOUfRUc0QqHc6GzvDTPaKtBZunmhlwQSmbSnEDxzQXwp4ABEH9qOskGXAnwBYZjYfICS45HAg4zP9OKIQgpZ7aHNWHkv6cXEjdNDdyTUiTPZaEWiwXa; path="/"; domain=.imdb.com; path_spec; expires="2037-12-30 00:00:00Z"; version=0
+Set-Cookie3: last_visit=2011-01-06+05%3A29%3A53; path="/"; domain=.kinopoisk.ru; path_spec; expires="2011-02-20 02:29:53Z"; version=0
+Set-Cookie3: my_perpages=a%3A0%3A%7B%7D; path="/"; domain=.kinopoisk.ru; path_spec; expires="2012-01-02 12:18:40Z"; version=0
+Set-Cookie3: user_country=ru; path="/"; domain=.kinopoisk.ru; path_spec; expires="2011-04-16 02:29:53Z"; version=0

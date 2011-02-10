@@ -1,0 +1,41 @@
+---
+imdb:
+  _protected:
+    name:
+      eng: ~
+  cast: Sammo Hung Kam-Bo,Yuwu Qi,Kuan Tai Chen,Donnie Yen,Wei Zhao,Kate Tsui,Damian
+    Lau,Ma Wu,Xiang Dong Xu,Hak On Fung,Kar-Ying Law,Chun Wu,Chen Zhi Hui
+  content: movie
+  country: Hong Kong,China
+  genres: Action,Drama,Thriller
+  name:
+    eng: 14 Blades
+    orig: Jin yi wei
+  url: http://www.imdb.com/title/tt1442571
+  year: '2010'
+kp:
+  cast: Дамиан Лау,Чен Зи Хуи,Ци Юйу,Саммо Хунг Кам-Бо,Чун Ву,Донни Ен,Фонг Ла Энн,Куан-Тай
+    Чен,Чжао Вэй,Кейт Цуй
+  code: '467995'
+  content: movie
+  country: Гонконг,Китай
+  genres: боевик,триллер,драма
+  name:
+    rus: 14 клинков
+  url: http://www.kinopoisk.ru/level/1/film/467995/
+  year: '2010'
+release:
+  lang: ~
+  quality: ~
+  status: ~
+title:
+  collection: ~
+  content: movie
+  kind: ~
+  name:
+    eng: 14 Blades
+    orig: Jin yi wei
+    rus: 14 клинков
+  origin: ~
+  status: ~
+  year: '2010'

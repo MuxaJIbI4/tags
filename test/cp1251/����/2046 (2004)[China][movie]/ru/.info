@@ -1,0 +1,38 @@
+---
+release:
+  lang: ru
+title:
+  _plugins:
+    imdb:
+      cast: Carina Lau,Ziyi Zhang,Ping Lam Siu,Alice Lee,Jie Dong,Ting Yip Ng,Faye
+        Wong,Li Gong,Tony Leung Chiu Wai,Thongchai McIntyre,Takuya Kimura,Chen Chang,Maggie
+        Cheung,Wang Sum
+      content: movie
+      country: China,France,Germany,Hong Kong
+      genres: Drama,Fantasy,Romance,Sci-Fi
+      name:
+        eng: '2046'
+        orig: ~
+      url: http://www.imdb.com/title/tt0212712
+      year: '2004'
+    kp:
+      cast: Чжан Цзыи,Карина Лау,Мэгги Чун,Чжан Чжэнь,Фэй Вонг,Тончай МакИнтайр,Тони
+        Люн Чу Вай,Такуя Кимура,Цзе Дун,Гун Ли
+      code: '13728'
+      content: movie
+      country: Германия,Франция,Гонконг,Китай
+      genres: фантастика,фэнтези,драма,мелодрама
+      name:
+        rus: '2046'
+      url: http://www.kinopoisk.ru/level/1/film/13728/
+      year: '2004'
+  collection: ~
+  content: movie
+  kind: ~
+  name:
+    eng: '2046'
+    orig: ~
+    rus: '2046'
+  origin: ~
+  status: ~
+  year: '2004'

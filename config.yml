@@ -1,0 +1,279 @@
+#logging
+logging:
+  enabled: no
+  log_file: 'tags.log'
+  write_: '>>'
+
+encoding:
+  fs: 'utf8'
+  out: 'utf8'
+
+# paths
+paths:
+#  content: /mnt
+  content: /home/eclipse/servers/video/mnt
+  public: mnt/video
+  cache: .cache # >> SCRIPT_HOME/.cache
+  db: db
+
+# tags descriptions and options
+tags:
+  # required
+  content: &content
+    symlink_name: 'kind'
+  kind: &kind
+    symlink_name: '' # instead of tag_name/tag_value use tag_value
+  origin: &origin
+    symlink_name: ''
+  name: &name
+    tags: {orig, eng, rus}
+  year: &year
+    symlink_name: 'year'
+
+  # optional
+  protected: &protected
+    symlink_name: ~
+  collection: &collection
+    symlink_name: 'collection'
+  comment: &comment
+    symlink_name: ~
+  status: &status # current (series), ongoing (season), incomplete, etc..
+    symlink_name: 'status'
+
+  country: &country
+    symlink_name: 'country'
+  genres: &genres
+    symlink_name: 'genres'
+  cast: &cast
+    symlink_name: 'actors'
+
+  ### releases
+  season: &season
+    symlink_name: ~
+  episode: &episode
+    symlink_name: ~
+  quality: &quality # video quality
+    symlink_name: 'quality'
+  lang: &lang   # audio language
+    symlink_name: 'lang'
+  group: &group
+    symlink_name: ~
+  var: &var # # specific  - 'director's cut', 'remastered', etc..
+    symlink_name: ~
+  from: &from # download location
+    symlink_name: ~
+
+# symlink creating rules
+symlink:
+  root: {'all', 'value:kind', 'value:content'}
+
+# name creating rules
+# TODO name >> filename
+name:
+  info: .infotest
+  content: .content
+  articles: {the, a, an, die, das, der}
+  intervals:
+    use: 1              # use interval or not
+    first_letter: 0     # 1 - ignore intervals and use first letter as interval instead
+    custom: # name_begin: interval_name
+      the: the
+    default: ['0-9','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz',
+                'абвг','деё','жзий','клм','ноп','рст','уфх','цчшщ','ыэяю']
+  restricted:
+    ':': ' - '  # colon
+    '/': '-'    # forward slash
+    '\': '-'    # backslash
+
+    '?': ' '    # question mark
+    '*': ' '    # asterisk
+    '>': ' '    # greater than
+    '<': ' '    # less than
+    '|': ' '    # vertical bar or pipe
+
+    '"': ''''   # double quote
+    '`': ''''
+  use_origin_tags: 0 # not implemented
+
+  # for private collection/releases
+  private:
+    opts: &private_opts
+      delim_parts: ' '
+    order: &private_order
+    - '+%{t_req}'
+    - '*%{t_opt}'
+    #- '*(%{r_opt})'
+    part: &private_part
+      t_req: &private_t_req
+        opts: &private_t_req_opts
+          no_duplicate_parts: 1
+          first_no_braces: 1
+          braces_parts:
+          - '['
+          - ']'
+          delim_parts: ' '
+        order:
+          eng:
+          - '%{name:eng}'
+          - '?%{name:rus}'
+          - '?%{name:orig}' # ? means excessive - use only if already created name equal ''
+          rus:
+          - '%{name:rus}'
+          - '?%{name:eng}'
+          - '?%{name:orig}'
+      t_opt: &private_t_opt
+        opts:
+          delim_parts: ''
+        order:
+        - '(%{year})'
+        - '[%{kind}]'
+        - '[%{content}]'
+      r_opt: &private_r_opt
+        opts:
+          delim_parts: '.'
+        order:
+        - 's%{release:season}'
+        - 'e%{release:episode}'
+        - '%{release:quality}'
+        - '%{release:lang}'
+        - '%{release:var}'
+        - '%{release:status}'
+
+  # for release name
+  release_full:
+    opts:  *private_opts
+    order:
+    - '+%{t_req}'
+    - '*%{t_opt}'
+    - '*(%{r_opt})'
+    part:  *private_part
+
+  release_short:
+    opts:  *private_opts
+    order:
+    - '*%{r_opt}'
+    part:  *private_part
+
+  public: # for public names
+    opts:
+      delim_parts: ' '
+    order:
+    - '+%{t_req}'
+    - '*%{t_opt}'
+    part:
+      t_req:
+        opts: *private_t_req_opts
+        order:
+          eng:
+          - '%{name:eng}'
+          - '%{name:rus}'
+          - '%{name:orig}'
+          rus:
+          - '%{name:rus}'
+          - '%{name:eng}'
+          - '%{name:orig}'
+      t_opt: *private_t_opt
+      r_opt: *private_r_opt
+
+plugins:
+  imdb:
+    config: ~
+    enabled: 1
+  kp:
+    config: ~
+    enabled: 1
+
+# databases
+db:
+  #default
+  title:
+    tag: title
+    cross: 1        # cross linked with other dbs ?
+    tags_allowed:  {
+        content, kind, origin, name, year, codes, # required
+        _protected, collection, comment, status, # optional
+        }
+    tags_required: {content, kind, origin, name, year}
+    symlink_tags: {year, status, collection, kind}
+    order:
+      default: 0
+      origin:
+        eng: 0
+        russian: 0
+        soviet: 0
+
+  release:
+    cross: 1 # ?
+    tag: release
+    tags_allowed: {quality, lang, group, season, episode, status, var, comment, from}
+    tags_required:  {lang}
+    symlink_tags: {lang, quality, status}
+
+  # imdb
+  imdb:
+    plugin: imdb
+    tag: imdb
+    cross: 1
+    tags_allowed: {_protected, content, code, kind, name, year, genres, country, cast }
+    tags_required:  {code, url, content, name, kind, year}
+    symlink_tags: {genres, country}
+    order:
+      default: 1
+      origin:
+        eng: 1
+        russian: 2
+        soviet: 2
+  imdb_top250:
+    plugin: imdb
+
+  # kp
+  kp:
+    plugin: kp
+    tag: kp
+    cross: 1
+    tags_allowed: {_protected, content, code, kind, name, year, genres, country, cast }
+    tags_required:  {code, url, content, name, kind, year}
+    symlink_tags: {genres, country}
+    order:
+      default: 2
+      origin:
+        eng: 2
+        russian: 1
+        soviet: 1
+  kp_top250:
+    plugin: kp
+
+content: # custom content options
+ # video/movie, video/series, video/animation, video/documentary, video/tv
+  video: ~
+
+#  books:
+#   title:
+#      allowed_tags:
+#        id: ~
+#        year: *year
+#        name_eng: *name_eng
+#        name_rus: *name_rus
+#        name_orig: *name_orig
+#      order: [ name_eng,  name_rus, name_orig, year]
+#      name:
+#      symlink_tags: { id, year, publisher}
+#    release:
+#      allowed_tags:
+#        id: ~
+#        lang: &lang [ "[", "]" ]
+#        publisher: *publisher
+#        edition: {}  # 1st, 2nd, 3rd, etc..
+#        ext: ~ # pdf djvu ??
+#        format: ~ # abook ??
+#      # TODO add publisher
+#      name: ["(%lang)", "(%edition) edition" ]
+#      symlink_tags: { lang }
+
+
+#  ## books related tags [publisher]
+#  publisher: &publisher {}
+#  # text language (for books,...)
+#  txt_lang: &txt_lang
+#    eng: {}
+#    rus: {}

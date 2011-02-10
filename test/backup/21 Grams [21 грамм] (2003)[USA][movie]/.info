@@ -1,0 +1,40 @@
+---
+imdb:
+  cast: Benicio Del Toro,Eddie Marsan,Antef A. Harris,Nick Nichols,Charlotte Gainsbourg,John
+    Rubinstein,Claire Pakis,Teresa Delgado,Marc Musso,Melissa Leo,Sean Penn,Naomi
+    Watts,Danny Huston,Loyd Keith Salter,Carly Nahon
+  content: movie
+  country: USA
+  genres: Crime,Drama,Thriller
+  name:
+    eng: 21 Grams
+    orig: ~
+  url: http://www.imdb.com/title/tt0315733
+  year: '2003'
+kp:
+  cast: Владимир Антоник,Дэнни Хьюстон,Наоми Уоттс,Бенисио Дель Торо,Вячеслав Баранов,Игорь
+    Тарадайкин,Эдди Марсан,Карли Наон,Алексей Колган,Джон Рубинстайн,Клер Пакис,Ник
+    Николс,Шарлотта Генсбур,Александр Рахленко,Шон Пенн
+  code: '9393'
+  content: movie
+  country: США
+  genres: триллер,драма,криминал
+  name:
+    rus: 21 грамм
+  url: http://www.kinopoisk.ru/level/1/film/9393/
+  year: '2003'
+release:
+  lang: ~
+  quality: ~
+  status: ~
+title:
+  collection: ~
+  content: movie
+  kind: ~
+  name:
+    eng: 21 Grams
+    orig: ~
+    rus: 21 грамм
+  origin: ~
+  status: ~
+  year: '2003'

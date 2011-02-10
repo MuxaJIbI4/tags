@@ -1,0 +1,39 @@
+---
+imdb:
+  cast: Dustin Harnish,Brad Ulrich,Kim Argetsinger,Robbie Henke,Collen Drew Henderson,Jonathan
+    Michael Trautmann,Dustin Fitzsimons,Seth Cassell,Todd Leigh,Conor Moriarty,Danielle
+    Gatto,Lauren Walsh,Karmen Morales,Daniel Sykes,Olivia Alaina May
+  content: movie
+  country: USA
+  genres: Comedy
+  name:
+    eng: 18 Year Old Virgin
+    orig: ~
+  url: http://www.imdb.com/title/tt1294969
+  year: '2009'
+kp:
+  cast: Сет Кэссел,Джонатан Майкл Траутмэнн,Лоурен Уолш,Дастин Хэрниш,Коллен Дрю Хендерсон,Робби
+    Хенке,Дэниэл Сайкес,Тодд Ли,Оливия Алайна Мэй,Кармен Моралес
+  code: '434971'
+  content: movie
+  country: США
+  genres: комедия
+  name:
+    rus: 18-летняя девственница
+  url: http://www.kinopoisk.ru/level/1/film/434971/
+  year: '2009'
+release:
+  lang: ~
+  quality: ~
+  status: ~
+title:
+  collection: ~
+  content: movie
+  kind: ~
+  name:
+    eng: 18 Year Old Virgin
+    orig: ~
+    rus: 18-летняя девственница
+  origin: ~
+  status: ~
+  year: '2009'

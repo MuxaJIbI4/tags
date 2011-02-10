@@ -1,0 +1,17 @@
+---
+imdb:
+  url: http://www.imdb.com/title/tt0090249
+kp:
+  url: http://www.kinopoisk.ru/level/1/film/98623/
+release:
+  lang: ru,es
+  quality: ~
+  status: ~
+title:
+  collection: ~
+  content: animation
+  name:
+    eng: ¡Vampiros en La Habana!
+    rus: Вампиры в Гаване!
+  status: ~
+  year: '1985'
